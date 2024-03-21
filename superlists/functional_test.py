@@ -40,7 +40,7 @@ class NewVisitorTest(unittest.TestCase):
         # "1: 공작깃털 사기" 아이템이 추가된다.
         inputbox.send_keys(Keys.ENTER)
 
-        time.sleep(1)::w
+        time.sleep(1)
 
         inputbox = self.browser.find_element(By.ID, 'id_new_item')
         inputbox.send_keys('공작깃털을 이용해서 그물 만들기')
