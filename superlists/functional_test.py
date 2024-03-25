@@ -17,7 +17,7 @@ class NewVisitorTest(unittest.TestCase):
     def check_for_row_in_list_table(self, row_text):
         table = self.browser.find_element(By.ID, 'id_list_table')
         rows = table.find_elements(By.TAG_NAME, 'tr')
-        self.assertIn('1: 공작깃털 사기', [row_text for row in rows])
+        self.assertIn(row_text, [row_text for row in rows])
 
     def test_can_start_a_list_and_retrive_it_later(self):
         # 에디스는 멋진 작업 목록 온라인 앱이 나왔다는 소식을 듣고
@@ -63,8 +63,6 @@ class NewVisitorTest(unittest.TestCase):
         # 해당 URL에 접속하면 그녀가 만든 작업 목록이 그대로 있는 것을 확인할 수 있다
 
         # 만족하고 잠자리에 든다.
-
-
 
 
 if __name__ == "__main__":
