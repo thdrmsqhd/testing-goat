@@ -27,7 +27,7 @@ class NewVisitorTest(LiveServerTestCase):
 
         # 웹 페이지 타이틀과 헤더가 'To-Do's 표시하고 있다.
         header_text = self.browser.find_element(By.TAG_NAME, "h1").text
-        self.assertIn('To-Do', header_text)
+        self.assertIn('작업 목록 시작', header_text)
 
         # 그녀는 바로 작업을 추가하기로 한다.
         inputbox = self.browser.find_element(By.ID, 'id_new_item')
