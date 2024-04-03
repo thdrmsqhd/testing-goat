@@ -1,1 +1,5 @@
 superlists/db.sqlite3
+.idea/
+superlists/lists/migrations/__pycache__/
+superlists/lists/__pycache__/
+superlists/lists/migrations/
