@@ -1,12 +1,11 @@
 import time
-import unittest
-from django.test import LiveServerTestCase
+from django.contrib.staticfiles.testing import StaticLiveServerTestCase
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 
 
-class NewVisitorTest(LiveServerTestCase):
+class NewVisitorTest(StaticLiveServerTestCase):
 
     def setUp(self):
         self.browser = webdriver.Firefox()
@@ -99,7 +98,12 @@ class NewVisitorTest(LiveServerTestCase):
         # 에디스는 홈페이지를 방문한다.
         self.browser.get(self.live_server_url)
         self.browser.set_window_size(1024, 768)
+        
+        window_size = self.browser.get_window_size()
 
+        self.assertEqual(window_size['width'], 1024)
+        self.assertEqual(window_size['height'], 768)
+        
         # 그녀는 입력 상자가 가운데 배치된 것을 본다.
         inputbox = self.browser.find_element(By.ID, 'id_new_item')
         self.assertAlmostEqual(
